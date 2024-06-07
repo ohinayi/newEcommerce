@@ -7,18 +7,19 @@ const port = process.env.PORT||3003;
 
 const connectDb = require('./config/db');
 connectDb();
+app.use(express.static('public'));
+
 
 const auth = require('./middleware/auth');
 
 const users = require('./routes/user');
 const items = require('./routes/items');
 app.use(cors());
-app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 app.use(users);
-app.use(auth);
+// app.use(auth);
 app.use(items);
 app.get('*', (req, res)=>{
     return res.send('not found')
