@@ -1,4 +1,3 @@
-
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -70,5 +69,3 @@ app.post('*', (req, res)=>{
 app.listen(port, ()=>{
     console.log('connected to port '+ port + ' succesfully');
 });
-
->>>>>>> origin/main
