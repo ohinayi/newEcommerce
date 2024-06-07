@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
@@ -33,7 +33,7 @@ app.listen(port, ()=>{
     console.log('connected to port '+ port + ' succesfully');
 });
 
-=======
+
 const express = require('express');
 const app = express();
 const cors = require('cors');
