@@ -2,6 +2,7 @@ const Itemsdb = require('../models/itemsModel');
 const purchasedDb = require('../models/purchasedModel');
 const UserDb = require('../models/userModel');
 
+
 const getItems = async (req, res) => {
     const items = await Itemsdb.find();
     return res.status(200).json(items);
@@ -21,7 +22,7 @@ const addItems = async (req, res) => {
     if (!req.file) {
         res.status(400).json({ 'message': 'file must be included...' });
     }
-    const baseUrl = "http://localhost:3003";
+    const baseUrl =  process.env.APP_URL;
     const newItem = {
         name: req.body.name,
         cost: req.body.cost,
